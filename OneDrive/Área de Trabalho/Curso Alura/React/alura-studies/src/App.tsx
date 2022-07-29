@@ -52,18 +52,25 @@ color: white;
 
 function App() {
 
-  const [tarefa, setTarefa] = useState('');
-  let [id, setId] = useState(0);
+  const [tarefa, setTarefa] = useState<Item>(Object);
   const [tarefas, setTarefas] = useState<Item[]>([]);
 
   function enviou(e: FormEvent){
     e.preventDefault();
 
-    setId(id = tarefas.length);
+    const existe = tarefas.find((item) => item.tarefa === tarefa.tarefa);
 
-    setTarefas([...tarefas, {id: id, tarefa: tarefa}]);
+    if(existe){
+      tarefa.id = existe.id;
+    } else{
+      addTarefa();
+    }
 
     console.log(tarefas)
+  }
+  
+  function addTarefa(){
+    setTarefas([...tarefas, {id: tarefa.id, tarefa: tarefa.tarefa}]);
   }
 
   return (
@@ -71,7 +78,7 @@ function App() {
     <Corpo>
       <Formulário onSubmit={enviou}>
         <Título>Tarefas</Título>
-        <Input value={tarefa} onChange={(e) => (setTarefa(e.target.value))} />
+        <Input onChange={(e) => (setTarefa({id: tarefas.length, tarefa: e.target.value}))} />
         <Botão type="submit">Adicionar</Botão>
       </Formulário>
       <Lista tarefas={tarefas}></Lista>
