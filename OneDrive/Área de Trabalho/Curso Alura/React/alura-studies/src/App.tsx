@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import Lista from './Lista';
+import Item from './Type';
 import './App.css';
 
 const Corpo = styled.body`
@@ -52,12 +53,17 @@ color: white;
 function App() {
 
   const [tarefa, setTarefa] = useState('');
-  const [tarefas, setTarefas] = useState<string[]>([]);
+  let [id, setId] = useState(0);
+  const [tarefas, setTarefas] = useState<Item[]>([]);
 
   function enviou(e: FormEvent){
     e.preventDefault();
 
-    setTarefas([...tarefas, tarefa]);
+    setId(id = tarefas.length);
+
+    setTarefas([...tarefas, {id: id, tarefa: tarefa}]);
+
+    console.log(tarefas)
   }
 
   return (

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Item from './Type';
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -17,14 +18,14 @@ width: 22.5%;
 border-radius: 10px;
 `;
 
-const Item = styled.li`
+const Iten = styled.li`
 font-size: 1.25rem;
 color: white;
 list-style: none;
 `;
 
 type Props = {
-    tarefas: string[];
+    tarefas: Item[];
 }
 
 function Lista(props: Props): any{
@@ -32,7 +33,7 @@ function Lista(props: Props): any{
         <>
         <List>
         {props.tarefas.map((tarefa) => (
-            <Item>{tarefa}</Item>
+            <Iten>{tarefa.tarefa}</Iten>
         ))}
         </List>
         </>
