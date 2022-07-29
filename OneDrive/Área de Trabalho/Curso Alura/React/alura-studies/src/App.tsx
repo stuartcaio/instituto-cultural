@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { FormEvent, useState } from 'react';
 import styled from 'styled-components';
+import Lista from './Lista';
 import './App.css';
 
 const Corpo = styled.body`
@@ -48,41 +49,26 @@ text-align: center;
 color: white;
 `;
 
-const Lista = styled.ul`
-display: flex;
-flex-direction: column;
-align-self: center;
-gap: 0.5rem;
-
-background-color: black;
-color: white;
-
-padding: 1rem;
-
-width: 22.5%;
-
-border-radius: 10px;
-`;
-
-const Item = styled.li`
-font-size: 1.25rem;
-color: white;
-list-style: none;
-`;
-
 function App() {
+
+  const [tarefa, setTarefa] = useState('');
+  const [tarefas, setTarefas] = useState<string[]>([]);
+
+  function enviou(e: FormEvent){
+    e.preventDefault();
+
+    setTarefas([...tarefas, tarefa]);
+  }
+
   return (
     <>
     <Corpo>
-      <Formulário>
+      <Formulário onSubmit={enviou}>
         <Título>Tarefas</Título>
-        <Input />
-        <Botão>Adicionar</Botão>
+        <Input value={tarefa} onChange={(e) => (setTarefa(e.target.value))} />
+        <Botão type="submit">Adicionar</Botão>
       </Formulário>
-      <Lista>
-        <Item>Ir para a academia</Item>
-        <Item>Ler um livro</Item>
-      </Lista>
+      <Lista tarefas={tarefas}></Lista>
     </Corpo>
     </>
   );
