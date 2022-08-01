@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Item from './Type';
 import styled from 'styled-components';
+import removeTarefa from './App';
+import { ArrowFunction } from 'typescript';
 
 const List = styled.ul`
 display: flex;
@@ -19,13 +21,28 @@ border-radius: 10px;
 `;
 
 const Iten = styled.li`
-font-size: 1.25rem;
+display: flex;
+justify-content: space-between;
+
 color: white;
 list-style: none;
+
+width: 100%;
+`;
+
+const ItenTexto = styled.h2`
+font-size: 1.25rem;
+`;
+
+const Exclui = styled.button`
+background: none;
+border: none;
+color: red;
 `;
 
 type Props = {
     tarefas: Item[];
+    removeTarefa: any;
 }
 
 function Lista(props: Props): any{
@@ -33,7 +50,10 @@ function Lista(props: Props): any{
         <>
         <List>
         {props.tarefas.map((tarefa) => (
-            <Iten>{tarefa.tarefa}</Iten>
+            <Iten>
+                <ItenTexto>{tarefa.tarefa}</ItenTexto>
+                <Exclui onClick={() => props.removeTarefa(tarefa.id)}>X</Exclui> 
+            </Iten>
         ))}
         </List>
         </>

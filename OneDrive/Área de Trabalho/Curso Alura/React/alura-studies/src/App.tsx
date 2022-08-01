@@ -66,11 +66,16 @@ function App() {
       addTarefa();
     }
 
-    console.log(tarefas)
+    console.log(tarefas);
   }
   
   function addTarefa(){
     setTarefas([...tarefas, {id: tarefa.id, tarefa: tarefa.tarefa}]);
+  }
+
+  const removeTarefa = (tarefaID: number) => {
+    const novaLista = tarefas.filter(task => task.id != tarefaID);
+    setTarefas(novaLista);
   }
 
   return (
@@ -81,7 +86,7 @@ function App() {
         <Input onChange={(e) => (setTarefa({id: tarefas.length, tarefa: e.target.value}))} />
         <Botão type="submit">Adicionar</Botão>
       </Formulário>
-      <Lista tarefas={tarefas}></Lista>
+      <Lista tarefas={tarefas} removeTarefa={removeTarefa}></Lista>
     </Corpo>
     </>
   );
