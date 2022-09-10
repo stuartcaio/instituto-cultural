@@ -2,6 +2,14 @@ import React from 'react'
 import styled from 'styled-components';
 
 export const Corpo = styled.body`
+display: flex;
+flex-direction: column;
+gap: 5rem;
+
+background-color: rgb(213, 213, 213);
+`;
+
+export const Fundo = styled.div`
 background-color: black;
 `;
 
