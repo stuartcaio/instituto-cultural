@@ -6,7 +6,7 @@ display: flex;
 flex-direction: column;
 gap: 5rem;
 
-background-color: rgb(213, 213, 213);
+background-color: rgb(228, 228, 228)
 `;
 
 export const Fundo = styled.div`

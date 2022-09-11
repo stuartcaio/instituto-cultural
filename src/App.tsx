@@ -3,6 +3,7 @@ import './reset.css';
 import './css/App.css';
 import {Corpo, Fundo, Cabecalho, CabecalhoSuperior, Menu, Item, CabecalhoInferior, TextoDoCabecalho} from './styles';
 import {ParagráfoSobre, Principal, Principal__Secao, Principal___Titulo, Artigos, Artigo, Artigo__Imagem, Artigo__Título, Artigo__Autor, Artigo__Botao} from './principalStyle';
+import {Copyright, Rodape, Rodape__Categorias, Rodape___Categoria, Rodape____Link} from './rodapeStyle';
 import {Link} from 'react-router-dom';
 
 function App() {
@@ -62,6 +63,29 @@ function App() {
                 </Artigos>
             </Principal__Secao>
           </Principal>
+          <Rodape>
+            <Rodape__Categorias>
+              <Rodape___Categoria>
+                <Rodape____Link href="#">Literatura</Rodape____Link>
+              </Rodape___Categoria>
+              <Rodape___Categoria>
+                <Rodape____Link href="#">Cinema</Rodape____Link>
+              </Rodape___Categoria>
+              <Rodape___Categoria>
+                <Rodape____Link href="#">Música</Rodape____Link>
+              </Rodape___Categoria>
+              <Rodape___Categoria>
+                <Rodape____Link href="#">Filosofia</Rodape____Link>
+              </Rodape___Categoria>
+              <Rodape___Categoria>
+                <Rodape____Link href="#">Astrologia</Rodape____Link>
+              </Rodape___Categoria>
+              <Rodape___Categoria>
+                <Rodape____Link href="#">Linguística</Rodape____Link>
+              </Rodape___Categoria>
+            </Rodape__Categorias>
+            <Copyright>&copy; Instituto Cultural Agrovileiro</Copyright>
+          </Rodape>
       </Corpo>
     </>
   );

@@ -8,7 +8,7 @@ gap: 7.5rem;
 
 padding: 2.5rem;
 
-background-color: rgb(213, 213, 213);
+background-color: rgb(228, 228, 228);
 color: black;
 `;
 
