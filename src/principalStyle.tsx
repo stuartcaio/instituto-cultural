@@ -81,3 +81,25 @@ padding: 0.5rem;
 
 width: 50%;
 `;
+
+export const Artigos__Botao = styled.button`
+font-size: 1.15rem;
+
+margin-left: 77.5rem;
+
+background-color: red;
+color: white;
+
+border-radius: 5px;
+border-style: none;
+
+width: 5rem;
+
+padding: 0.5rem;
+
+transition: 1.5s;
+
+&:hover {
+    background-color:  rgb(131, 21, 21);
+}
+`;

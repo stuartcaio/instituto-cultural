@@ -2,7 +2,7 @@ import React from 'react';
 import './reset.css';
 import './css/App.css';
 import {Corpo, Fundo, Cabecalho, CabecalhoSuperior, Menu, Item, CabecalhoInferior, TextoDoCabecalho} from './styles';
-import {ParagráfoSobre, Principal, Principal__Secao, Principal___Titulo, Artigos, Artigo, Artigo__Imagem, Artigo__Título, Artigo__Autor, Artigo__Botao} from './principalStyle';
+import {ParagráfoSobre, Principal, Principal__Secao, Principal___Titulo, Artigos, Artigo, Artigo__Imagem, Artigo__Título, Artigo__Autor, Artigo__Botao, Artigos__Botao} from './principalStyle';
 import {Copyright, Rodape, Rodape__Categorias, Rodape___Categoria, Rodape____Link} from './rodapeStyle';
 import {Link} from 'react-router-dom';
 
@@ -61,6 +61,9 @@ function App() {
                     <Artigo__Botao>Leia mais</Artigo__Botao>
                   </Artigo>
                 </Artigos>
+                <Link to={`/paginas/artigos`}>
+                  <Artigos__Botao>Mais</Artigos__Botao>
+                </Link>
             </Principal__Secao>
           </Principal>
           <Rodape>
@@ -84,7 +87,7 @@ function App() {
                 <Rodape____Link href="#">Linguística</Rodape____Link>
               </Rodape___Categoria>
             </Rodape__Categorias>
-            <Copyright>&copy; Instituto Cultural Agrovileiro</Copyright>
+            <Copyright>&copy; Instituto Cultural Agrovileiro 2022</Copyright>
           </Rodape>
       </Corpo>
     </>
