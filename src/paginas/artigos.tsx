@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import '../reset.css';
 import '../css/App.css';
 import {Corpo, Fundo, Cabecalho, CabecalhoSuperior, Menu, Item, CabecalhoInferior, TextoDoCabecalho} from '../styles';
-import {Articles, Article, Article__Image, Article__Div, Article___Informacao, Article__Titulo, Article___Data, Article__Paragrafo, Article__Botao, Article__Hr} from './artigosStyle';
+import {Principal, Articles, Article, Article__Image, Article__Div, Article___Informacao, Article__Titulo, Article___Data, Article__Paragrafo, Article__Botao, Article__Hr, Articles__Titulo, Lateral, Lateral__Lista, Lateral___Item, Lateral___Hr} from './artigosStyle';
 import {Copyright, Rodape, Rodape__Categorias, Rodape___Categoria, Rodape____Link} from '../rodapeStyle';
 import {Link} from 'react-router-dom';
 import { Artigo__Botao } from '../principalStyle';
@@ -39,6 +39,8 @@ function Artigos(){
         }
     ]);
 
+    const [gurus, setGurus] = useState(['Olavo de Carvalho', 'Padre Paulo Ricardo', 'J.R.R Tolkien', 'G.K Chesterton', 'Dostoiévski', 'Scott Hahn', 'Louis Lavelle', 'Sergio Leone','Santo Tomás de Aquino', 'Padre Sertillanges', 'John Ford','Frank Capra']);
+
     return(
         <>
         <Corpo>
@@ -60,24 +62,38 @@ function Artigos(){
                         <TextoDoCabecalho style={{textAlign: 'center'}}>Artigos</TextoDoCabecalho>
                     </CabecalhoInferior>
                 </Cabecalho>
-                <Articles>
-                    {artigos.map((artigo) => (
-                        <Article>
-                            <Article__Image src={artigo.imagem} />
-                            <Article__Div>
-                                <Article___Informacao>{artigo.categoria}</Article___Informacao>
-                                <Article___Informacao>{artigo.autor}</Article___Informacao>
-                                <Article___Data>{artigo.data}</Article___Data>
-                            </Article__Div>
-                            <Article__Titulo>{artigo.titulo}</Article__Titulo>
-                            <Article__Paragrafo>{artigo.texto}</Article__Paragrafo>
-                            <Link to="/paginas/artigos">
-                                <Article__Botao>Leia mais</Article__Botao>
-                            </Link>
-                            <Article__Hr />
-                        </Article>
-                    ))}
-                </Articles>
+                <Principal>
+                    <Articles>
+                        <Articles__Titulo>Últimas publicações</Articles__Titulo>
+                        {artigos.map((artigo) => (
+                            <Article>
+                                <Article__Image src={artigo.imagem} />
+                                <Article__Div>
+                                    <Article___Informacao>{artigo.categoria}</Article___Informacao>
+                                    <Article___Informacao>{artigo.autor}</Article___Informacao>
+                                    <Article___Data>{artigo.data}</Article___Data>
+                                </Article__Div>
+                                <Article__Titulo>{artigo.titulo}</Article__Titulo>
+                                <Article__Paragrafo>{artigo.texto}</Article__Paragrafo>
+                                <Link to="/paginas/artigos">
+                                    <Article__Botao>Leia mais</Article__Botao>
+                                </Link>
+                                <Article__Hr />
+                            </Article>
+                        ))}
+                    </Articles>
+                    <Lateral>
+                        <Articles__Titulo>Nossos gurus</Articles__Titulo>
+                        <Lateral__Lista>
+                            {gurus.map((guru) => (
+                                <>
+                                <Lateral___Item>{guru}</Lateral___Item>
+                                <Lateral___Hr />
+                                </>
+                            ))}
+                        </Lateral__Lista>
+                    </Lateral>
+                </Principal>
             </Fundo>
         </Corpo>
         </>

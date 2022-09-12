@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export const Principal = styled.main`
+display: flex;
+justify-content: space-between;
+
+background-color: rgb(228, 228, 228);
+`;
+
 export const Articles = styled.div`
 display: flex;
 flex-direction: column;
@@ -8,7 +15,23 @@ gap: 5rem;
 
 padding: 5rem;
 
+width: 40rem;
+
 background-color: rgb(228, 228, 228);
+`;
+
+export const Articles__Titulo = styled.h2`
+font-family: 'Raleway', sans-serif;
+font-size: 2rem;
+text-align: center;
+color: grey;
+
+border-radius: 5px;
+border: 1px solid grey;
+
+width: 20rem;
+
+padding: 0.5rem;
 `;
 
 export const Article = styled.div`
@@ -100,4 +123,31 @@ background-color: grey;
 margin-right: 40rem;
 
 width: 40rem;
+`;
+
+export const Lateral = styled.div`
+display: flex;
+flex-direction: column;
+gap: 2.5rem;
+
+background-color: rgb(228, 228, 228);
+
+padding: 5rem;
+`;
+
+export const Lateral__Lista = styled.ul`
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
+`;
+
+export const Lateral___Item = styled.li`
+font-size: 1.25rem;
+font-family: 'Raleway', sans-serif;
+`;
+
+export const Lateral___Hr = styled.hr`
+background-color: grey;
+
+width: 100%;
 `;
