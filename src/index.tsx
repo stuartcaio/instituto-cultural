@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import Artigos from './paginas/artigos';
+import Artigo from './paginas/artigo';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
@@ -12,6 +13,7 @@ root.render(
     <Routes>
       <Route path='/' element={<App />} />
       <Route path='/paginas/artigos' element={<Artigos />} />
+      <Route path='/paginas/:id' element={<Artigo />} />
     </Routes>
   </Router>
 );

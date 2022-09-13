@@ -15,9 +15,13 @@ function App() {
               <CabecalhoSuperior>
                 <img className="cabecalho__logo" src={require('./img/book.png')} alt=""/>
                 <Menu>
-                  <Item>Home</Item>
+                  <Link to="/">
+                    <Item>Home</Item>
+                  </Link>
                   <Item>Sobre</Item>
-                  <Item>Artigos</Item>
+                  <Link to="/paginas/artigos">
+                    <Item>Artigos</Item>
+                  </Link>
                   <Item>Membros</Item>
                   <Item>Contato</Item>
                 </Menu>

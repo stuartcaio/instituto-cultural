@@ -55,25 +55,26 @@ width: 40rem;
 `;
 
 export const Article___Informacao = styled.h4`
+font-family: 'Raleway', sans-serif;
 font-size: 1rem;
 text-align: center;
 color: grey;
 
-padding: 0.25rem;
+padding: 0.5rem;
 
 border-radius: 5px;
 border: 1px solid grey;
 
 box-sizing: border-box;
 
-width: 9rem;
+width: 15rem;
 `;
 
 export const Article___Data = styled.h4`
 font-size: 1rem;
 color: grey;
 
-margin-left: 17rem;
+margin-left: 12rem;
 
 padding: 0.25rem;
 `;
@@ -150,4 +151,15 @@ export const Lateral___Hr = styled.hr`
 background-color: grey;
 
 width: 100%;
+`;
+
+export const The_Article = styled.div`
+display: flex;
+flex-direction: column;
+gap: 2rem;
+`;
+
+export const The_Article__Image = styled.img`
+width: 20rem;
+height: 15rem;
 `;

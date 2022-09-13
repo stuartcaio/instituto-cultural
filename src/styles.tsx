@@ -46,6 +46,7 @@ width: 50%;
 export const Item = styled.li`
 font-size: 2rem;
 font-weight: 400;
+text-decoration: none;
 color: white;
 
 transition: 1s;

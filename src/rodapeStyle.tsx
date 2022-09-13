@@ -11,8 +11,7 @@ gap: 3rem;
 width: 100%;
 height: 25vh;
 
-background: rgb(117,117,117);
-background: linear-gradient(0deg, rgba(117,117,117,1) 0%, rgba(228,228,228,1) 100%);
+background-color: rgb(228, 228, 228);
 `;
 
 export const Rodape__Categorias = styled.div`
@@ -31,7 +30,7 @@ padding: 0.75rem;
 border: 1px solid grey;
 border-radius: 10px;
 
-color: rgb(117,117,117);
+color: rgb(150,150,150);
 color: linear-gradient(0deg, rgba(117,117,117,1) 0%, rgba(228,228,228,1) 100%);
 `;
 

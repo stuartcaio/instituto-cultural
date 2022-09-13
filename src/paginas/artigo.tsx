@@ -2,14 +2,15 @@ import React, {useState} from 'react';
 import '../reset.css';
 import '../css/App.css';
 import {Corpo, Fundo, Cabecalho, CabecalhoSuperior, Menu, Item, CabecalhoInferior, TextoDoCabecalho} from '../styles';
-import {Principal, Articles, Article, Article__Image, Article__Div, Article___Informacao, Article__Titulo, Article___Data, Article__Paragrafo, Article__Botao, Article__Hr, Articles__Titulo, Lateral, Lateral__Lista, Lateral___Item, Lateral___Hr} from './artigosStyle';
+import {Principal, Articles, Article, Article__Image, Article__Div, Article___Informacao, Article__Titulo, Article___Data, Article__Paragrafo, Article__Botao, Article__Hr, Articles__Titulo, Lateral, Lateral__Lista, Lateral___Item, Lateral___Hr, The_Article, The_Article__Image} from './artigosStyle';
 import {Copyright, Rodape, Rodape__Categorias, Rodape___Categoria, Rodape____Link} from '../rodapeStyle';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import { Artigo__Botao } from '../principalStyle';
 import {artigos} from './constArtigos';
 
-function Artigos(){
+function Artigo(){
 
+    const {id} = useParams();
     const [gurus, setGurus] = useState(['Olavo de Carvalho', 'Padre Paulo Ricardo', 'J.R.R Tolkien', 'G.K Chesterton', 'Dostoiévski', 'Scott Hahn', 'Louis Lavelle', 'Sergio Leone','Santo Tomás de Aquino', 'Padre Sertillanges', 'John Ford','Frank Capra']);
 
     const [livrosInfluentes, setLivrosInfluentes] = useState(['O Senhor dos Anéis', 'O Hobbit', 'A Vida Intelectual', 'A Educação da Vontade', 'O Jardim das Aflições', 'A Morte de Ivan Ilitch', 'Caminho', 'Forja', '1984']);
@@ -38,27 +39,9 @@ function Artigos(){
                     </CabecalhoInferior>
                 </Cabecalho>
                 <Principal>
-                    <Articles>
-                        <Articles__Titulo>Últimas publicações</Articles__Titulo>
-                        {artigos.map((artigo) => (
-                            <Article>
-                                <Article__Image src={artigo.imagem} />
-                                <Article__Div>
-                                    <Article___Informacao>{artigo.categoria}</Article___Informacao>
-                                    <Article___Informacao>{artigo.autor}</Article___Informacao>
-                                    <Article___Data>{artigo.data}</Article___Data>
-                                </Article__Div>
-                                <Article__Titulo>{artigo.titulo}</Article__Titulo>
-                                <Article__Paragrafo>{artigo.texto}</Article__Paragrafo>
-                                <Link to="/paginas/artigos">
-                                    <Link to={`/paginas/${artigo.id}`}>
-                                        <Article__Botao>Leia mais</Article__Botao>
-                                    </Link>
-                                </Link>
-                                <Article__Hr />
-                            </Article>
-                        ))}
-                    </Articles>
+                    <The_Article>
+                        <h1>Artigo - {id}</h1>
+                    </The_Article>
                     <Lateral>
                         <Articles__Titulo>Nossos gurus</Articles__Titulo>
                         <Lateral__Lista>
@@ -109,4 +92,4 @@ function Artigos(){
     );
 }
 
-export default Artigos;
+export default Artigo;
