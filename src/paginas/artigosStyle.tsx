@@ -157,9 +157,21 @@ export const The_Article = styled.div`
 display: flex;
 flex-direction: column;
 gap: 2rem;
+
+padding: 5rem;
+`;
+
+export const The_Article__Titulo = styled.h2`
+font-family: 'Raleway', sans-serif;
+font-size: 2rem;
 `;
 
 export const The_Article__Image = styled.img`
-width: 20rem;
-height: 15rem;
+width: 40rem;
+height: 20rem;
+`;
+
+export const The_Article__Texto = styled.p`
+font-family: 'Raleway', sans-serif;
+font-size: 1.25rem;
 `;
