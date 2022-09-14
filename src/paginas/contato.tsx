@@ -7,32 +7,43 @@ import {Copyright, Rodape, Rodape__Categorias, Rodape___Categoria, Rodape____Lin
 import {Link, useParams} from 'react-router-dom';
 import { Artigo__Botao } from '../principalStyle';
 import {artigos} from './constArtigos';
+import {Membros_, Membro, Membro__Imagem, Membro__Informacao, Membro___Nome, Membro___Sobre} from './membrosStyle';
+import {Contato_, Secao__Contato, Contato__Div, Contato___Imagem, Contato___Titulo, Contato___Contato} from './contatoStyle';
 
-function Artigo(){
-
-    const {id} = useParams();
-
-    const artigoAtual = artigos.find((artigo) => artigo.id === id);
-
-    const [artigo, setArtigo] = useState({
-        id: artigoAtual?.id,
-        imagem: artigoAtual?.imagem,
-        titulo: artigoAtual?.titulo,
-        categoria: artigoAtual?.categoria,
-        autor: artigoAtual?.autor,
-        data: artigoAtual?.data,
-        texto: artigoAtual?.texto
-    });
+function Contato(){
 
     const [gurus, setGurus] = useState(['Olavo de Carvalho', 'Padre Paulo Ricardo', 'J.R.R Tolkien', 'G.K Chesterton', 'Dostoiévski', 'Scott Hahn', 'Louis Lavelle', 'Sergio Leone','Santo Tomás de Aquino', 'Padre Sertillanges', 'John Ford','Frank Capra']);
 
     const [livrosInfluentes, setLivrosInfluentes] = useState(['O Senhor dos Anéis', 'O Hobbit', 'A Vida Intelectual', 'A Educação da Vontade', 'O Jardim das Aflições', 'A Morte de Ivan Ilitch', 'Caminho', 'Forja', '1984']);
 
+    const [contatos, setContatos] = useState([
+        {
+            nome: 'Whatsapp',
+            imagem: require('../img/contato/whatsapp (3).png'),
+            contato: '(47) 11111-1111'
+        },
+        {
+            nome: 'Instagram',
+            imagem: require('../img/contato/instagram.png'),
+            contato: '@stuart_caio'
+        },
+        {
+            nome: 'Telegram',
+            imagem: require('../img/contato/telegram.png'),
+            contato: '(47) 11111-1111'
+        },
+        {
+            nome: 'Email',
+            imagem: require('../img/contato/email.png'),
+            contato: 'meuemail@gmail.com'
+        }
+    ]);
+
     return(
         <>
         <Corpo>
             <Fundo>
-                <Cabecalho style={{backgroundImage: `url(${require('../img/saopedro.jpg')})`, height: '75vh', backgroundPosition: 'center'}}>
+                <Cabecalho style={{backgroundImage: `url(${require('../img/terra-media.jpg')})`, height: '75vh', backgroundPosition: 'center'}}>
                     <CabecalhoSuperior>
                         <img className="cabecalho__logo" src={require('../img/book.png')} alt=""/>
                         <Menu>
@@ -51,20 +62,22 @@ function Artigo(){
                         </Menu>
                     </CabecalhoSuperior>
                     <CabecalhoInferior>
-                        <TextoDoCabecalho style={{textAlign: 'center'}}>Artigo</TextoDoCabecalho>
+                        <TextoDoCabecalho style={{textAlign: 'center'}}>Contato</TextoDoCabecalho>
                     </CabecalhoInferior>
                 </Cabecalho>
                 <Principal>
-                    <The_Article>
-                        <The_Article__Titulo>{artigo.titulo}</The_Article__Titulo>
-                        <Article__Div>
-                            <Article___Informacao>{artigo.categoria}</Article___Informacao>
-                            <Article___Informacao>{artigo.autor}</Article___Informacao>
-                            <Article___Data>{artigo.data}</Article___Data>
-                        </Article__Div>
-                        <The_Article__Image src={artigo.imagem} />
-                        <The_Article__Texto>{artigo.texto}</The_Article__Texto>
-                    </The_Article>
+                    <Contato_>
+                        <Articles__Titulo>Contato</Articles__Titulo>
+                            <Secao__Contato>
+                                {contatos.map((contato) => (
+                                    <Contato__Div>
+                                        <Contato___Imagem src={contato.imagem} />
+                                        <Contato___Titulo>{contato.nome}</Contato___Titulo>
+                                        <Contato___Contato>{contato.contato}</Contato___Contato>
+                                    </Contato__Div>
+                                ))}
+                            </Secao__Contato>
+                    </Contato_>
                     <Lateral>
                         <Articles__Titulo>Nossos gurus</Articles__Titulo>
                         <Lateral__Lista>
@@ -115,4 +128,4 @@ function Artigo(){
     );
 }
 
-export default Artigo;
+export default Contato;

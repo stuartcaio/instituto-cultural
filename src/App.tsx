@@ -18,12 +18,15 @@ function App() {
                   <Link to="/">
                     <Item>Home</Item>
                   </Link>
-                  <Item>Sobre</Item>
                   <Link to="/paginas/artigos">
                     <Item>Artigos</Item>
                   </Link>
-                  <Item>Membros</Item>
-                  <Item>Contato</Item>
+                  <Link to="/paginas/membros">
+                    <Item>Membros</Item>
+                  </Link>
+                  <Link to="/paginas/contato">
+                    <Item>Contato</Item>
+                  </Link>
                 </Menu>
               </CabecalhoSuperior>
               <CabecalhoInferior>

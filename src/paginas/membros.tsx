@@ -7,32 +7,42 @@ import {Copyright, Rodape, Rodape__Categorias, Rodape___Categoria, Rodape____Lin
 import {Link, useParams} from 'react-router-dom';
 import { Artigo__Botao } from '../principalStyle';
 import {artigos} from './constArtigos';
+import {Membros_, Membro, Membro__Imagem, Membro__Informacao, Membro___Nome, Membro___Sobre} from './membrosStyle';
 
-function Artigo(){
-
-    const {id} = useParams();
-
-    const artigoAtual = artigos.find((artigo) => artigo.id === id);
-
-    const [artigo, setArtigo] = useState({
-        id: artigoAtual?.id,
-        imagem: artigoAtual?.imagem,
-        titulo: artigoAtual?.titulo,
-        categoria: artigoAtual?.categoria,
-        autor: artigoAtual?.autor,
-        data: artigoAtual?.data,
-        texto: artigoAtual?.texto
-    });
+function Membros(){
 
     const [gurus, setGurus] = useState(['Olavo de Carvalho', 'Padre Paulo Ricardo', 'J.R.R Tolkien', 'G.K Chesterton', 'Dostoiévski', 'Scott Hahn', 'Louis Lavelle', 'Sergio Leone','Santo Tomás de Aquino', 'Padre Sertillanges', 'John Ford','Frank Capra']);
 
     const [livrosInfluentes, setLivrosInfluentes] = useState(['O Senhor dos Anéis', 'O Hobbit', 'A Vida Intelectual', 'A Educação da Vontade', 'O Jardim das Aflições', 'A Morte de Ivan Ilitch', 'Caminho', 'Forja', '1984']);
 
+    const [membros, setMembros] = useState([
+        {
+            nome: 'Caio Stuart',
+            imagem: require('../img/topgun-maverick.jpg'),
+            sobre: 'ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui numquam nihil cum eaque, quisquam id, voluptatibus similique, neque excepturi enim inventore est! Quo suscipit rerum quod ullam sed magnam.'
+        },
+        {
+            nome: 'Felipe Moraes',
+            imagem: require('../img/senhor_dos_aneis.jpg'),
+            sobre: 'ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui numquam nihil cum eaque, quisquam id, voluptatibus similique, neque excepturi enim inventore est! Quo suscipit rerum quod ullam sed magnam.'
+        },
+        {
+            nome: 'Gabriel Ovidor',
+            imagem: require('../img/monarquia-brasileira.jpg'),
+            sobre: 'ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui numquam nihil cum eaque, quisquam id, voluptatibus similique, neque excepturi enim inventore est! Quo suscipit rerum quod ullam sed magnam.'
+        },
+        {
+            nome: 'Alexandre Sampaio',
+            imagem: require('../img/topgun-maverick.jpg'),
+            sobre: 'ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui numquam nihil cum eaque, quisquam id, voluptatibus similique, neque excepturi enim inventore est! Quo suscipit rerum quod ullam sed magnam.'
+        }
+    ]);
+
     return(
         <>
         <Corpo>
             <Fundo>
-                <Cabecalho style={{backgroundImage: `url(${require('../img/saopedro.jpg')})`, height: '75vh', backgroundPosition: 'center'}}>
+                <Cabecalho style={{backgroundImage: `url(${require('../img/monasterio.jpg')})`, height: '75vh', backgroundPosition: 'center'}}>
                     <CabecalhoSuperior>
                         <img className="cabecalho__logo" src={require('../img/book.png')} alt=""/>
                         <Menu>
@@ -42,7 +52,7 @@ function Artigo(){
                             <Link to="/paginas/artigos">
                                 <Item>Artigos</Item>
                             </Link>
-                            <Link to="/paginas/membros">
+                            <Link to="/paginas/contato">
                                 <Item>Membros</Item>
                             </Link>
                             <Link to="/paginas/contato">
@@ -51,20 +61,22 @@ function Artigo(){
                         </Menu>
                     </CabecalhoSuperior>
                     <CabecalhoInferior>
-                        <TextoDoCabecalho style={{textAlign: 'center'}}>Artigo</TextoDoCabecalho>
+                        <TextoDoCabecalho style={{textAlign: 'center'}}>Membros</TextoDoCabecalho>
                     </CabecalhoInferior>
                 </Cabecalho>
                 <Principal>
-                    <The_Article>
-                        <The_Article__Titulo>{artigo.titulo}</The_Article__Titulo>
-                        <Article__Div>
-                            <Article___Informacao>{artigo.categoria}</Article___Informacao>
-                            <Article___Informacao>{artigo.autor}</Article___Informacao>
-                            <Article___Data>{artigo.data}</Article___Data>
-                        </Article__Div>
-                        <The_Article__Image src={artigo.imagem} />
-                        <The_Article__Texto>{artigo.texto}</The_Article__Texto>
-                    </The_Article>
+                    <Membros_>
+                        <Articles__Titulo>Membros</Articles__Titulo>
+                        {membros.map((membro) => (
+                            <Membro>
+                                <Membro__Imagem src={membro.imagem} />
+                                <Membro__Informacao>
+                                    <Membro___Nome>{membro.nome}</Membro___Nome>
+                                    <Membro___Sobre>{membro.sobre}</Membro___Sobre>
+                                </Membro__Informacao>
+                            </Membro>
+                        ))}
+                    </Membros_>
                     <Lateral>
                         <Articles__Titulo>Nossos gurus</Articles__Titulo>
                         <Lateral__Lista>
@@ -115,4 +127,4 @@ function Artigo(){
     );
 }
 
-export default Artigo;
+export default Membros;

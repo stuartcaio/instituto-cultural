@@ -173,5 +173,5 @@ height: 20rem;
 
 export const The_Article__Texto = styled.p`
 font-family: 'Raleway', sans-serif;
-font-size: 1.25rem;
+font-size: 1.5rem;
 `;
