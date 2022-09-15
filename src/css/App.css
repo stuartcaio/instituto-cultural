@@ -6,3 +6,39 @@
     width: 10vw;
     height: 12vh;
 }
+
+.cabecalho__botao{
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: inherit;
+    
+    border: none;
+
+    padding: 1.25rem;
+
+    width: 2rem;
+    height: 2rem;
+}
+
+@media screen and (max-width: 720px){
+    .cabecalho__botao{
+        display: flex;
+
+        margin-top: 1rem;
+    }
+
+    .cabecalho__logo{
+        width: 5rem;
+        height: 4rem;
+    }
+
+    .active{
+        display: block;
+        visibility: visible;
+        overflow-y: auto;
+
+        height: calc(100vh - 96px);
+    }
+}

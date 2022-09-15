@@ -60,6 +60,9 @@ function Contato(){
                                 <Item>Contato</Item>
                             </Link>
                         </Menu>
+                        <button className="cabecalho__botao">
+                            <img src={require('../img/icon-menu.png')} alt=""/>
+                        </button>
                     </CabecalhoSuperior>
                     <CabecalhoInferior>
                         <TextoDoCabecalho style={{textAlign: 'center'}}>Contato</TextoDoCabecalho>

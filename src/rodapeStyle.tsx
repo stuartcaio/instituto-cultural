@@ -19,9 +19,17 @@ display: flex;
 justify-content: space-around;
 
 width: 75%;
+
+@media screen and (max-width: 720px){
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    width: 85%;
+}
 `;
 
 export const Rodape___Categoria = styled.h3`
+text-align: center;
 font-size: 1.5rem;
 font-weight: 400;
 
@@ -32,6 +40,14 @@ border-radius: 10px;
 
 color: rgb(150,150,150);
 color: linear-gradient(0deg, rgba(117,117,117,1) 0%, rgba(228,228,228,1) 100%);
+
+width: 7.5rem;
+
+@media screen and (max-width: 720px){
+    text-align: center;
+
+    width: 6.5rem;
+}
 `;
 
 export const Rodape____Link = styled.a`
@@ -49,4 +65,8 @@ export const Copyright = styled.p`
 font-size: 1.1rem;
 font-weight: 0;
 color: rgb(75,75,75);
+
+@media screen and (max-width: 720px){
+    padding: 2rem;
+}
 `;

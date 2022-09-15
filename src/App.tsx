@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useLayoutEffect} from 'react';
 import './reset.css';
 import './css/App.css';
 import {Corpo, Fundo, Cabecalho, CabecalhoSuperior, Menu, Item, CabecalhoInferior, TextoDoCabecalho} from './styles';
@@ -7,6 +7,7 @@ import {Copyright, Rodape, Rodape__Categorias, Rodape___Categoria, Rodape____Lin
 import {Link} from 'react-router-dom';
 
 function App() {
+
   return (
     <>
       <Corpo>
@@ -14,11 +15,11 @@ function App() {
             <Cabecalho>
               <CabecalhoSuperior>
                 <img className="cabecalho__logo" src={require('./img/book.png')} alt=""/>
-                <Menu>
+                <Menu className="menu">
                   <Link to="/">
                     <Item>Home</Item>
                   </Link>
-                  <Link to="/paginas/artigos">
+                  <Link to="/paginas/arti'gos">
                     <Item>Artigos</Item>
                   </Link>
                   <Link to="/paginas/membros">
@@ -28,6 +29,9 @@ function App() {
                     <Item>Contato</Item>
                   </Link>
                 </Menu>
+                <button className="cabecalho__botao">
+                  <img src={require('./img/icon-menu.png')} alt=""/>
+                </button>
               </CabecalhoSuperior>
               <CabecalhoInferior>
                 <TextoDoCabecalho>

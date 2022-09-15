@@ -36,7 +36,7 @@ function Artigo(){
                     <CabecalhoSuperior>
                         <img className="cabecalho__logo" src={require('../img/book.png')} alt=""/>
                         <Menu>
-                            <Link to="/" style={{textDecoration: 'none'}}>
+                            <Link to="/">
                                 <Item>Home</Item>
                             </Link>
                             <Link to="/paginas/artigos">
@@ -49,6 +49,9 @@ function Artigo(){
                                 <Item>Contato</Item>
                             </Link>
                         </Menu>
+                        <button className="cabecalho__botao">
+                            <img src={require('../img/icon-menu.png')} alt=""/>
+                        </button>
                     </CabecalhoSuperior>
                     <CabecalhoInferior>
                         <TextoDoCabecalho style={{textAlign: 'center'}}>Artigo</TextoDoCabecalho>

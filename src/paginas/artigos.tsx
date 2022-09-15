@@ -35,11 +35,15 @@ function Artigos(){
                             	<Item>Contato</Item>
                             </Link>
                         </Menu>
+                        <button className="cabecalho__botao">
+                            <img src={require('../img/icon-menu.png')} alt=""/>
+                        </button>
                     </CabecalhoSuperior>
                     <CabecalhoInferior>
                         <TextoDoCabecalho style={{textAlign: 'center'}}>Artigos</TextoDoCabecalho>
                     </CabecalhoInferior>
                 </Cabecalho>
+                </Fundo>
                 <Principal>
                     <Articles>
                         <Articles__Titulo>Últimas publicações</Articles__Titulo>
@@ -106,7 +110,6 @@ function Artigos(){
                     </Rodape__Categorias>
                     <Copyright>&copy; Instituto Cultural Agrovileiro 2022</Copyright>
                 </Rodape>
-            </Fundo>
         </Corpo>
         </>
     );

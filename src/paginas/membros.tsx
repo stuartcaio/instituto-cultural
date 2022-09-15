@@ -59,6 +59,9 @@ function Membros(){
                                 <Item>Contato</Item>
                             </Link>
                         </Menu>
+                    <button className="cabecalho__botao">
+                        <img src={require('../img/icon-menu.png')} alt=""/>
+                    </button>
                     </CabecalhoSuperior>
                     <CabecalhoInferior>
                         <TextoDoCabecalho style={{textAlign: 'center'}}>Membros</TextoDoCabecalho>
